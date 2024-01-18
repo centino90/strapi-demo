@@ -3,7 +3,8 @@ import bootstrap from 'bootstrap/dist/js/bootstrap';
 import './App.css';
 import React from 'react'
 
-const apiToken = `918fee162d4b47687dd2540ddf4d14bf12c7c5246aed44341f1a17ec88567e9a1b29ebb7471847020b548b33d2c17ae5814591c747afa968fcac2a872d0e681b6608c5bae3119f047b157da95d24d7c068c34c8e2bd30096ada17ce03a29f5e7a03e35a08762618098244d1d9c544f3135e49b58de6d32ac1f6e5cf85c8c8bf4`
+const apiToken = `b4d784ef8a5b9ad039100cd1f0b68a7e4494435eb91be261860414560de4567f76dfea9778ae88d954b9b57def4e6791736192214c63dc8923f93daae8be11e50c73066b76219fd88950bdbe4a9d9b888c1cc9b4d7cd793260fa5fb378b09d55f0048046ba7a40b756448d75f11fe4bad13f3aa85a25a0f73640173c868032de`
+const backendHost = 'https://strapi-backend-9zpt.onrender.com'
 
 function TableRows({ rows, handleEditButtonClick }) {
   const elements = []
@@ -123,7 +124,7 @@ function App() {
 
   function handleArticlesFetch(page = 1, navigated = null) {
     console.log('====PAGE', page, navigated)
-    const URL = `http://localhost:1337/api/Articles?pagination[page]=${page}&pagination[pageSize]=5&sort[0]=createdAt:desc`
+    const URL = `${backendHost}/api/Articles?pagination[page]=${page}&pagination[pageSize]=5&sort[0]=createdAt:desc`
     const f = fetch(URL, {
       headers: {
         Authorization: `Bearer ${apiToken}`
@@ -141,7 +142,7 @@ function App() {
   }
 
   function handleArticleInsert(title, description) {
-    const URL = `http://localhost:1337/api/Articles`
+    const URL = `${backendHost}/api/Articles`
     const f = fetch(URL, {
       method: 'POST',
       headers: {
@@ -160,7 +161,7 @@ function App() {
   }
 
   function handleArticleUpdate(title, description) {
-    const URL = `http://localhost:1337/api/Articles/${editableArticleId}`
+    const URL = `${backendHost}/api/Articles/${editableArticleId}`
     const f = fetch(URL, {
       method: 'PUT',
       headers: {
