@@ -9,7 +9,10 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'verceldb'),
       user: env('DATABASE_USERNAME', 'default'),
       password: env('DATABASE_PASSWORD', 'hpaMcE3XZ9OF'),
-      schema: env('DATABASE_SCHEMA', 'public')
+      schema: env('DATABASE_SCHEMA', 'public'), // Not required
+      ssl: {
+        rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
+      },
     },
     debug: false,
   },
