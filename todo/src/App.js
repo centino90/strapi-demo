@@ -3,8 +3,10 @@ import bootstrap from 'bootstrap/dist/js/bootstrap';
 import './App.css';
 import React from 'react'
 
-const apiToken = `b4d784ef8a5b9ad039100cd1f0b68a7e4494435eb91be261860414560de4567f76dfea9778ae88d954b9b57def4e6791736192214c63dc8923f93daae8be11e50c73066b76219fd88950bdbe4a9d9b888c1cc9b4d7cd793260fa5fb378b09d55f0048046ba7a40b756448d75f11fe4bad13f3aa85a25a0f73640173c868032de`
-const backendHost = 'https://strapi-backend-9zpt.onrender.com'
+// const apiToken = `b4d784ef8a5b9ad039100cd1f0b68a7e4494435eb91be261860414560de4567f76dfea9778ae88d954b9b57def4e6791736192214c63dc8923f93daae8be11e50c73066b76219fd88950bdbe4a9d9b888c1cc9b4d7cd793260fa5fb378b09d55f0048046ba7a40b756448d75f11fe4bad13f3aa85a25a0f73640173c868032de`
+const apiToken = `a8ae012e1993b9ae4fd6521bdf60a0b26f338e0aa1a05dc868ab6d2760924177469d66f7f5904c98b3ac52b2dd9aaabfcdf5a5a2af4a783ad223a0abf35a4a6fe9b8a5831b0acdcdb82ab37f51ec54cfcf8d79470b0adc97f81e9d8a346f25eb1eb5cfc7c747cf0b1f45b1796245b4d43e41842a5edee1ee4422ff9672e791d7`
+// const backendHost = 'https://strapi-backend-9zpt.onrender.com'
+const backendHost = 'http://localhost:1337'
 
 function TableRows({ rows, handleEditButtonClick }) {
   const elements = []
